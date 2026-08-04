@@ -51,7 +51,7 @@ export default function Services() {
           </h2>
           <p className="text-steel text-lg max-w-xl">
             Every service we offer maps directly to a real threat or compliance requirement.
-            We don't sell solutions looking for problems.
+            We don&apos;t sell solutions looking for problems.
           </p>
         </div>
 

@@ -74,7 +74,7 @@ export default function About() {
               we built a firm that brings that same rigor to government agencies and commercial clients.
             </p>
             <p className="text-steel leading-relaxed mb-8">
-              We're based in Fredericksburg, Virginia — at the heart of the federal contracting
+              We&apos;re based in Fredericksburg, Virginia — at the heart of the federal contracting
               corridor — and we operate with the discipline, accountability, and mission focus
               that only comes from military service.
             </p>

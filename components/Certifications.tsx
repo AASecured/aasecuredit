@@ -50,7 +50,7 @@ export default function Certifications() {
             <span className="text-electric">Certified. Cleared.</span>
           </h2>
           <p className="text-steel text-lg max-w-xl">
-            Our certifications aren't wall decorations — each one represents a real
+            Our certifications aren&apos;t wall decorations — each one represents a real
             qualification that directly benefits your security program.
           </p>
         </div>

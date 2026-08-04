@@ -20,13 +20,13 @@ export default function Contact() {
           <div>
             <p className="section-label mb-3">Get In Touch</p>
             <h2 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-6">
-              Let's Secure<br/>
+              Let&apos;s Secure<br/>
               <span className="text-electric">Your Mission.</span>
             </h2>
             <p className="text-steel leading-relaxed mb-10">
-              Whether you're a federal agency looking for an SDVOSB cybersecurity partner,
+              Whether you&apos;re a federal agency looking for an SDVOSB cybersecurity partner,
               a prime contractor seeking a qualified sub, or a commercial organization
-              that needs a security assessment — reach out and let's talk.
+              that needs a security assessment — reach out and let&apos;s talk.
             </p>
 
             <div className="space-y-5">
@@ -60,7 +60,7 @@ export default function Contact() {
                   <CheckCircle className="w-8 h-8 text-success" />
                 </div>
                 <h3 className="text-navy font-bold text-xl mb-2">Message Received</h3>
-                <p className="text-steel text-sm">We'll get back to you within one business day.</p>
+                <p className="text-steel text-sm">We&apos;ll get back to you within one business day.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">

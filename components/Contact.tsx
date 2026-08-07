@@ -1,15 +1,36 @@
 "use client";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — wire to Resend or Formspree later
-    setSent(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -32,7 +53,7 @@ export default function Contact() {
             <div className="space-y-5">
               {[
                 { icon: Mail,    label: "Email",    value: "service@aasecuredit.com", href: "mailto:service@aasecuredit.com" },
-                { icon: Phone,   label: "Phone",    value: "(703) 879-4718‬",           href: "tel:+17038794718‬" },
+                { icon: Phone,   label: "Phone",    value: "(571) 206-9260",           href: "tel:+15712069260" },
                 { icon: MapPin,  label: "Location", value: "Fredericksburg, Virginia", href: null },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-center gap-4">
@@ -97,8 +118,19 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full justify-center py-3.5">
-                  Send Message <Send className="w-4 h-4" />
+                {error && (
+                  <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 rounded-lg px-4 py-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    {error}
+                  </div>
+                )}
+
+                <button type="submit" disabled={loading} className="btn-primary w-full justify-center py-3.5 disabled:opacity-60 disabled:cursor-not-allowed">
+                  {loading ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                  ) : (
+                    <>Send Message <Send className="w-4 h-4" /></>
+                  )}
                 </button>
               </form>
             )}

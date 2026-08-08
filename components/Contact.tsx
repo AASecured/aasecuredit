@@ -53,7 +53,7 @@ export default function Contact() {
             <div className="space-y-5">
               {[
                 { icon: Mail,    label: "Email",    value: "service@aasecuredit.com", href: "mailto:service@aasecuredit.com" },
-                { icon: Phone,   label: "Phone",    value: "(703) 879-4718‬",           href: "tel:+17038794718‬"},
+                { icon: Phone,   label: "Phone",    value: "(703) 879-4718‬",           href: "tel:+17038794718‬" },
                 { icon: MapPin,  label: "Location", value: "Fredericksburg, Virginia", href: null },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-center gap-4">

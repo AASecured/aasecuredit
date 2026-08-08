@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
           </p>
           <p style="color: #334155; line-height: 1.6;">
             If your matter is urgent, you can reach us directly at
-            <a href="tel:+15712069260" style="color: #2775E6;">(571) 206-9260</a>.
+            <a href="tel:+17038794718" style="color: #2775E6;">(703) 879-4718</a>.
           </p>
           <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 24px 0;" />
           <p style="color: #94A3B8; font-size: 12px;">

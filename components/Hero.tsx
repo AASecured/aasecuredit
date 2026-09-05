@@ -23,7 +23,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-electric/10 border border-electric/30 rounded-full px-4 py-1.5 mb-8">
             <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
             <span className="font-mono text-xs text-electric font-semibold tracking-wider uppercase">
-              SDVOSB Certified · Fredericksburg, VA
+              Service-Disabled Veteran-Owned · Fredericksburg, VA
             </span>
           </div>
 
@@ -50,7 +50,7 @@ export default function Hero() {
           {/* Stats row */}
           <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
             {[
-              { icon: ShieldCheck, value: "SDVOSB", label: "SBA Certified" },
+              { icon: ShieldCheck, value: "SDVOSB", label: "SBA VetCert in progress" },
               { icon: Award,       value: "Secret", label: "Clearance Eligible" },
               { icon: Users,       value: "Gov + Commercial", label: "Client Focus" },
             ].map(({ icon: Icon, value, label }) => (

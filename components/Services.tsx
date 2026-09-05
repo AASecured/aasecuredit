@@ -35,7 +35,7 @@ const services = [
     icon: BarChart3,
     title: "Security Automation",
     description: "Custom Python, PowerShell, and Terraform automation to eliminate manual toil and accelerate detection-to-response cycles.",
-    tags: ["Python", "Terraform", "Power Automate"],
+    tags: ["Python", "Terraform", "PowerShell"],
   },
 ];
 

@@ -34,7 +34,7 @@ export default function About() {
                 <div className="space-y-4">
                   {[
                     { label: "Entity Type",       value: "LLC — Virginia" },
-                    { label: "Certification",     value: "SDVOSB (SBA VetCert)" },
+                    { label: "Certification",     value: "SDVOSB — VetCert pending" },
                     { label: "Clearance",         value: "Secret Eligible" },
                     { label: "Primary NAICS",     value: "541512" },
                     { label: "Founded",           value: "2026" },

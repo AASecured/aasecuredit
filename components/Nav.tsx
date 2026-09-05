@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Shield } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#home",    label: "Home" },
   { href: "#services",label: "Services" },
+  { href: "#small-business", label: "Small Business" },
   { href: "#about",   label: "About" },
   { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
@@ -27,14 +29,8 @@ export default function Nav() {
     }`}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 bg-electric rounded-lg flex items-center justify-center group-hover:bg-electric-light transition-colors">
-            <Shield className="w-4 h-4 text-white" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-white font-bold text-sm tracking-tight">AA SECURED IT</span>
-            <span className="text-electric text-[10px] font-mono tracking-widest uppercase">Solutions LLC</span>
-          </div>
+        <Link href="#home" className="flex items-center" aria-label="AA Secured IT Solutions — home">
+          <Image src="/logo-nav.png" alt="AA Secured IT Solutions" width={190} height={40} priority className="h-9 w-auto" />
         </Link>
 
         {/* Desktop links */}

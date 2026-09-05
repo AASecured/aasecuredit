@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,15 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-10">
           {/* Brand */}
           <div className="max-w-xs">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-electric rounded-lg flex items-center justify-center">
-                <Shield className="w-4 h-4 text-white" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm">AA SECURED IT</div>
-                <div className="text-electric text-[10px] font-mono tracking-widest uppercase">Solutions LLC</div>
-              </div>
-            </div>
+            <Image src="/logo.png" alt="AA Secured IT Solutions" width={220} height={73} className="mb-4 h-auto w-[220px]" />
             <p className="text-white/30 text-xs leading-relaxed">
               Service-Disabled Veteran-Owned cybersecurity firm serving federal agencies
               and commercial clients from Fredericksburg, Virginia.
@@ -40,7 +32,7 @@ export default function Footer() {
             <div>
               <div className="font-mono text-[11px] text-white/30 uppercase tracking-widest mb-3">Credentials</div>
               <div className="space-y-2 text-white/50 text-sm">
-                <div>SDVOSB — SBA VetCert</div>
+                <div>Service-Disabled Veteran-Owned</div>
                 <div>NAICS 541512</div>
                 <div>CySA+ · Security+</div>
                 <div>Secret Clearance</div>

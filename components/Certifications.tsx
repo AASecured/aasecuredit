@@ -5,8 +5,8 @@ const certs = [
     icon: ShieldCheck,
     title: "SDVOSB",
     subtitle: "Service-Disabled Veteran-Owned Small Business",
-    issuer: "U.S. Small Business Administration — VetCert",
-    description: "Certified under 13 CFR Part 128. Eligible for federal set-aside and sole-source contracts reserved for service-disabled veteran-owned firms.",
+    issuer: "U.S. Small Business Administration — VetCert (application in progress)",
+    description: "100% owned and controlled by a service-disabled veteran under 13 CFR Part 128. SBA VetCert application submitted; on approval, eligible for SDVOSB set-aside and sole-source contracts.",
     color: "bg-success/10 text-success border-success/20",
     iconColor: "text-success",
   },
@@ -47,7 +47,7 @@ export default function Certifications() {
           <p className="section-label mb-3">Trust & Credentials</p>
           <h2 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4">
             Verified.<br/>
-            <span className="text-electric">Certified. Cleared.</span>
+            <span className="text-electric">Credentialed. Cleared.</span>
           </h2>
           <p className="text-steel text-lg max-w-xl">
             Our certifications aren&apos;t wall decorations — each one represents a real
@@ -78,7 +78,7 @@ export default function Certifications() {
           <div>
             <div className="font-mono text-xs text-electric uppercase tracking-widest mb-1">Federal Registration</div>
             <div className="text-white font-bold">Registered on SAM.gov</div>
-            <div className="text-white/50 text-sm mt-0.5">Active UEI · CAGE Code · NAICS 541512</div>
+            <div className="text-white/50 text-sm mt-0.5">UEI <span className="font-mono text-white/80">S6W3NRZLEH38</span> · CAGE code pending · NAICS 541512</div>
           </div>
           <div className="flex flex-wrap gap-3">
             {["541512", "541519", "541690"].map(code => (

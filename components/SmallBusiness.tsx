@@ -3,7 +3,7 @@ import { ArrowRight, Globe, ShieldCheck, Database, AppWindow, ClipboardCheck, Li
 
 // Flip to false to hide "starting at" prices on the public site.
 // Prices mirror the Service Catalog & Price Sheet (QuickBooks import).
-const SHOW_PRICES = true;
+const SHOW_PRICES = false;
 
 const packages = [
   {
@@ -78,7 +78,7 @@ export default function SmallBusiness() {
               <li className="flex gap-2"><span className="text-electric font-bold">—</span> Fixed price for fixed scope; hourly only when you ask for it</li>
               <li className="flex gap-2"><span className="text-electric font-bold">—</span> Serving Fredericksburg, Stafford, and the Northern Virginia corridor — remote anywhere</li>
             </ul>
-            <Link href="#contact" className="btn-primary text-base px-7 py-3.5">
+            <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
               Request a quote <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

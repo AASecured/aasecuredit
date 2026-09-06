@@ -39,10 +39,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-16">
-            <Link href="#contact" className="btn-primary text-base px-8 py-4">
+            <Link href="/contact" className="btn-primary text-base px-8 py-4">
               Get a Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="#services" className="btn-outline text-base px-8 py-4">
+            <Link href="/services" className="btn-outline text-base px-8 py-4">
               Our Services
             </Link>
           </div>

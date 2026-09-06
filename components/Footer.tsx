@@ -20,10 +20,10 @@ export default function Footer() {
             <div>
               <div className="font-mono text-[11px] text-white/30 uppercase tracking-widest mb-3">Company</div>
               <div className="space-y-2">
-                {["#about", "#services", "#certifications", "#contact"].map(href => (
+                {[["/services","Services"],["/small-business","Small Business"],["/about","About"],["/certifications","Certifications"],["/contact","Contact"]].map(([href,label]) => (
                   <div key={href}>
-                    <Link href={href} className="text-white/50 hover:text-white text-sm transition-colors capitalize">
-                      {href.replace("#", "")}
+                    <Link href={href} className="text-white/50 hover:text-white text-sm transition-colors">
+                      {label}
                     </Link>
                   </div>
                 ))}

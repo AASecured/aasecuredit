@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import About from "@/components/About";
+import Nav from "@/components/Nav";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: "About | AA Secured IT Solutions",
-  description: "A Service-Disabled Veteran-Owned cybersecurity firm based in Fredericksburg, Virginia.",
-};
-
-export default function Page() {
+export default function Home() {
   return (
-    <PageShell>
-      <About />
-    </PageShell>
+    <main>
+      <Nav />
+      <Hero />
+      <Footer />
+    </main>
   );
 }

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0B2748;
+  --color-navy-light: #0D3060;
+  --color-navy-dark: #071A30;
+  --color-electric: #2775E6;
+  --color-electric-light: #4B8EF0;
+  --color-electric-dark: #1A5CC4;
+  --color-slate: #F0F4F8;
+  --color-steel: #64748B;
+  --color-success: #10B981;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); color: var(--color-navy); background: white; -webkit-font-smoothing: antialiased; }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--color-electric); color: white; font-weight: 600;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    transition: all 0.2s; box-shadow: 0 4px 14px 0 rgba(39,117,230,0.3);
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: var(--color-electric-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 2px solid white; color: white; font-weight: 600;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .btn-outline:hover { background: white; color: var(--color-navy); }
+
+  .section-label {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-electric);
+    display: block;
+  }
+
+  .card {
+    background: white; border-radius: 1rem; padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--color-slate);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+}

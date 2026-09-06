@@ -1,23 +1,16 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import SmallBusiness from "@/components/SmallBusiness";
+import type { Metadata } from "next";
+import PageShell from "@/components/PageShell";
 import About from "@/components/About";
-import Certifications from "@/components/Certifications";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "About | AA Secured IT Solutions",
+  description: "A Service-Disabled Veteran-Owned cybersecurity firm based in Fredericksburg, Virginia.",
+};
+
+export default function Page() {
   return (
-    <main>
-      <Nav />
-      <Hero />
-      <Services />
-      <SmallBusiness />
+    <PageShell>
       <About />
-      <Certifications />
-      <Contact />
-      <Footer />
-    </main>
+    </PageShell>
   );
 }

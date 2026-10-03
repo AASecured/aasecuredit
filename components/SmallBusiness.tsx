@@ -1,109 +1,200 @@
-import Link from "next/link";
-import { ArrowRight, Globe, ShieldCheck, Database, AppWindow, ClipboardCheck, LifeBuoy } from "lucide-react";
+"use client";
 
-// Flip to false to hide "starting at" prices on the public site.
-// Prices mirror the Service Catalog & Price Sheet (QuickBooks import).
-const SHOW_PRICES = false;
-
-const packages = [
-  {
-    icon: ShieldCheck,
-    name: "Website Security Checkup",
-    price: "from $499",
-    turnaround: "3 business days",
-    what: "We scan your site for known vulnerabilities, check SSL/TLS and security headers, review plugins and admin access, then hand you a plain-English report with a prioritized fix list.",
-    fit: "Any business with a public website.",
-  },
-  {
-    icon: Globe,
-    name: "Secure Website Build",
-    price: "from $2,500",
-    turnaround: "2–4 weeks",
-    what: "A fast, modern site built security-first: hardened hosting, working contact forms, basic SEO, analytics, and a handoff so your team can update content without calling us.",
-    fit: "New businesses, or sites that are slow, dated, or on a platform nobody trusts anymore.",
-  },
-  {
-    icon: AppWindow,
-    name: "Custom Web Application",
-    price: "from $7,500",
-    turnaround: "scoped per project",
-    what: "Client portals, internal tools, booking or intake systems. Designed with authentication, role-based access, and a security review before launch.",
-    fit: "Businesses running critical work on spreadsheets and email.",
-  },
-  {
-    icon: Database,
-    name: "Database Hardening & Backup",
-    price: "from $900",
-    turnaround: "1 week",
-    what: "Access review, encryption at rest and in transit, automated backups with a tested restore, and least-privilege accounts for your staff and vendors.",
-    fit: "Anyone storing customer, patient, or financial records.",
-  },
-  {
-    icon: ClipboardCheck,
-    name: "Small Business Security Assessment",
-    price: "from $1,500",
-    turnaround: "2 weeks",
-    what: "A right-sized review against the NIST Cybersecurity Framework: MFA, email security, endpoint protection, backups, and staff awareness. You get a scored roadmap, not a 90-page binder.",
-    fit: "Businesses that need to satisfy a customer, insurer, or contract requirement.",
-  },
-  {
-    icon: LifeBuoy,
-    name: "Monthly Care Plan",
-    price: "from $150/mo",
-    turnaround: "ongoing",
-    what: "Updates, uptime and security monitoring, monthly backups, and a block of support hours so small problems never become expensive ones.",
-    fit: "Every client who wants us on call after launch.",
-  },
-];
+import SolutionPage from "@/components/SolutionPage";
+import { Globe, ShieldCheck, Database, AppWindow, ClipboardCheck, LifeBuoy } from "lucide-react";
 
 export default function SmallBusiness() {
   return (
-    <section id="small-business" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-14 items-start">
-          {/* Left: the pitch */}
-          <div className="lg:sticky lg:top-28">
-            <p className="section-label mb-3">For Local Businesses</p>
-            <h2 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-5">
-              Serious security,<br />
-              <span className="text-electric">sized for your business.</span>
-            </h2>
-            <p className="text-steel text-lg leading-relaxed mb-6">
-              The same team that builds detection pipelines for enterprise environments
-              also fixes the website your customers see and the database your staff
-              rely on. Fixed-scope packages, written quotes, no surprise invoices.
-            </p>
-            <ul className="space-y-2 text-navy/80 text-sm mb-8">
-              <li className="flex gap-2"><span className="text-electric font-bold">—</span> Written quote within one business day</li>
-              <li className="flex gap-2"><span className="text-electric font-bold">—</span> Fixed price for fixed scope; hourly only when you ask for it</li>
-              <li className="flex gap-2"><span className="text-electric font-bold">—</span> Serving Fredericksburg, Stafford, and the Northern Virginia corridor — remote anywhere</li>
-            </ul>
-            <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
-              Request a quote <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* Right: the packages, as a ruled list rather than cards */}
-          <div className="divide-y divide-slate border-y border-slate">
-            {packages.map(({ icon: Icon, name, price, turnaround, what, fit }) => (
-              <div key={name} className="py-7 grid sm:grid-cols-[48px_1fr_auto] gap-4 items-start">
-                <div className="w-12 h-12 rounded-xl bg-slate flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-electric" />
-                </div>
-                <div>
-                  <h3 className="text-navy font-bold text-lg leading-snug">{name}</h3>
-                  <p className="text-steel text-sm leading-relaxed mt-1.5">{what}</p>
-                  <p className="text-navy/60 text-xs mt-2">Good fit: {fit}</p>
-                </div>
-                <div className="sm:text-right sm:pl-4 shrink-0">
-                  {SHOW_PRICES && <div className="text-navy font-bold whitespace-nowrap">{price}</div>}
-                  <div className="text-steel text-xs mt-0.5 whitespace-nowrap">{turnaround}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <SolutionPage
+      eyebrow="For Local Businesses"
+      title="Small Business Security & Web Services"
+      tagline="The same team that builds detection pipelines for enterprise environments also secures the website your customers see and the data your staff rely on. Fixed-scope packages, written quotes, no surprise invoices."
+      breadcrumb={[
+        { label: "Home", href: "/" },
+        { label: "Small Business", href: "/small-business" },
+      ]}
+      intro={{
+        id: "overview",
+        label: "Why Us",
+        heading: "Serious security, sized for your business",
+        body: [
+          "Most small businesses can't justify a full-time security team — but they still hold customer data, run a public website, and depend on systems that attackers target every day.",
+          "We bring enterprise-grade practices down to a right-sized package: clear scope, a fixed price, and a plain-English report you can actually act on. No 90-page binders, no jargon, no runaway invoices.",
+        ],
+        highlights: [
+          "Written quote within one business day",
+          "Fixed price for fixed scope; hourly only when you ask",
+          "Serving Fredericksburg, Stafford & Northern Virginia",
+          "Remote delivery available anywhere in the U.S.",
+        ],
+      }}
+      capabilitiesLabel="Services"
+      capabilitiesHeading="Packaged services for local businesses"
+      capabilities={[
+        {
+          title: "Website Security Checkup",
+          icon: ShieldCheck,
+          columns: [
+            [
+              "External vulnerability scan",
+              "SSL/TLS & security-header review",
+              "CMS & plugin audit",
+            ],
+            [
+              "Admin-access & account review",
+              "Plain-English findings report",
+              "Prioritized fix list",
+            ],
+            [
+              "30-minute walkthrough call",
+              "Good fit: any business with a public website",
+              "Turnaround: ~3 business days",
+            ],
+          ],
+        },
+        {
+          title: "Secure Website Build",
+          icon: Globe,
+          columns: [
+            [
+              "Fast, modern site (Next.js / hardened hosting)",
+              "Working contact & quote forms",
+              "Mobile-responsive design",
+            ],
+            [
+              "Basic SEO & analytics setup",
+              "Security-first configuration",
+              "Content-handoff training",
+            ],
+            [
+              "Good fit: new, slow, or dated sites",
+              "Turnaround: 2–4 weeks",
+              "Deposit starts the project",
+            ],
+          ],
+        },
+        {
+          title: "Custom Web Application",
+          icon: AppWindow,
+          columns: [
+            [
+              "Client portals & internal tools",
+              "Booking & intake systems",
+              "Authentication & role-based access",
+            ],
+            [
+              "Secure database design",
+              "Pre-launch security review",
+              "30 days post-launch support",
+            ],
+            [
+              "Good fit: work running on spreadsheets & email",
+              "Scoped per project after discovery",
+              "Built security-first from day one",
+            ],
+          ],
+        },
+        {
+          title: "Database Hardening & Backup",
+          icon: Database,
+          columns: [
+            [
+              "Access & privilege review",
+              "Encryption at rest & in transit",
+              "Least-privilege accounts",
+            ],
+            [
+              "Automated backups",
+              "Documented & tested restore",
+              "Vendor & staff access controls",
+            ],
+            [
+              "Good fit: customer, patient, or financial records",
+              "Turnaround: ~1 week",
+              "Recovery you can rely on",
+            ],
+          ],
+        },
+        {
+          title: "Small Business Security Assessment",
+          icon: ClipboardCheck,
+          columns: [
+            [
+              "NIST CSF-aligned review",
+              "Multi-factor authentication (MFA)",
+              "Email security (SPF/DKIM/DMARC)",
+            ],
+            [
+              "Endpoint protection review",
+              "Backup & recovery posture",
+              "Staff security awareness",
+            ],
+            [
+              "Scored roadmap & executive summary",
+              "Good fit: insurance/customer/contract requirements",
+              "Turnaround: ~2 weeks",
+            ],
+          ],
+        },
+        {
+          title: "Monthly Care Plan",
+          icon: LifeBuoy,
+          columns: [
+            [
+              "Updates & security patching",
+              "Uptime & security monitoring",
+              "Monthly backups",
+            ],
+            [
+              "Block of support hours",
+              "Priority response",
+              "Quarterly check-in & report",
+            ],
+            [
+              "Good fit: every client after launch",
+              "Ongoing, month-to-month",
+              "Cancel anytime with notice",
+            ],
+          ],
+        },
+      ]}
+      secondary={{
+        id: "approach",
+        label: "How We Work",
+        heading: "No surprises, start to finish",
+        body: [
+          "You get a written quote before any work begins, a fixed price for the agreed scope, and direct access to the person doing the work.",
+          "Need something beyond the packages? We scope it, quote it, and only proceed with your written approval.",
+        ],
+        highlights: [
+          "Same-day response during business hours",
+          "Fixed-scope, fixed-price engagements",
+          "Net 15 invoicing via bank transfer",
+          "You own everything we build, on full payment",
+        ],
+      }}
+      downloads={{
+        heading: "Get started",
+        items: [
+          {
+            title: "Request a Free Security Checkup",
+            desc: "We'll run a quick external review of your website and show you what we find — no obligation.",
+            href: "/contact",
+          },
+          {
+            title: "Request a Quote",
+            desc: "Tell us what you need and get a written, fixed-scope quote within one business day.",
+            href: "/contact",
+          },
+          {
+            title: "Ask a Question",
+            desc: "Not sure which service fits? Reach out and we'll point you in the right direction.",
+            href: "/contact",
+          },
+        ],
+      }}
+      ctaHeading="Let's secure your business"
+      ctaBody="Whether it's your website, your data, or a compliance requirement from a customer or insurer, we'll give you a straight answer and a fixed-price quote within one business day."
+    />
   );
 }

@@ -1,79 +1,218 @@
-import { ShieldAlert, Search, Network, Lock, FileCheck, BarChart3 } from "lucide-react";
+"use client";
 
-const services = [
-  {
-    icon: ShieldAlert,
-    title: "Vulnerability Management",
-    description: "Continuous scanning, prioritization, and remediation tracking using Tenable/Nessus aligned to NIST and DISA STIG frameworks.",
-    tags: ["Tenable", "NIST 800-53", "DISA STIG"],
-  },
-  {
-    icon: Search,
-    title: "Threat Detection & Hunting",
-    description: "Proactive threat hunting and SOC operations powered by Splunk ES/SOAR and MITRE ATT&CK-mapped detection engineering.",
-    tags: ["Splunk ES", "MITRE ATT&CK", "SOAR"],
-  },
-  {
-    icon: Network,
-    title: "Network Security Monitoring",
-    description: "24/7 network visibility, anomaly detection, and incident triage across on-prem and cloud environments.",
-    tags: ["EDR", "NDR", "CrowdStrike"],
-  },
-  {
-    icon: Lock,
-    title: "Incident Response",
-    description: "Rapid containment, forensic analysis, and structured recovery plans to minimize dwell time and business impact.",
-    tags: ["IR Planning", "Forensics", "Recovery"],
-  },
-  {
-    icon: FileCheck,
-    title: "RMF & Compliance Support",
-    description: "Risk Management Framework documentation, ATO support, and continuous monitoring for federal agencies and contractors.",
-    tags: ["RMF", "ATO", "FISMA"],
-  },
-  {
-    icon: BarChart3,
-    title: "Security Automation",
-    description: "Custom Python, PowerShell, and Terraform automation to eliminate manual toil and accelerate detection-to-response cycles.",
-    tags: ["Python", "Terraform", "PowerShell"],
-  },
-];
+import SolutionPage from "@/components/SolutionPage";
+import { ShieldAlert, Search, Network, Lock, FileCheck, Cpu } from "lucide-react";
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-slate">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-16">
-          <p className="section-label mb-3">What We Do</p>
-          <h2 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4">
-            Security Services.<br/>
-            <span className="text-electric">No Fluff.</span>
-          </h2>
-          <p className="text-steel text-lg max-w-xl">
-            Every service we offer maps directly to a real threat or compliance requirement.
-            We don&apos;t sell solutions looking for problems.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, title, description, tags }) => (
-            <div key={title} className="card group">
-              <div className="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mb-5 group-hover:bg-electric/10 transition-colors">
-                <Icon className="w-6 h-6 text-navy group-hover:text-electric transition-colors" />
-              </div>
-              <h3 className="text-navy font-bold text-lg mb-3">{title}</h3>
-              <p className="text-steel text-sm leading-relaxed mb-5">{description}</p>
-              <div className="flex flex-wrap gap-2">
-                {tags.map(tag => (
-                  <span key={tag} className="font-mono text-[11px] bg-slate px-2.5 py-1 rounded-full text-steel border border-slate">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <SolutionPage
+      eyebrow="Cybersecurity Solutions"
+      title="Security Operations & Engineering"
+      tagline="Detection, response, and compliance built by practitioners who run these systems in production every day — for federal agencies, prime contractors, and mission-critical environments."
+      breadcrumb={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+      ]}
+      intro={{
+        id: "overview",
+        label: "Overview",
+        heading: "Enterprise security, engineered — not resold",
+        body: [
+          "AA Secured IT Solutions is a Service-Disabled Veteran-Owned cybersecurity firm delivering security operations, detection engineering, vulnerability management, and compliance support to organizations that cannot afford to get security wrong.",
+          "Our work is grounded in real SOC experience across transit and homeland security environments: tuning detection content, commanding incident response, and owning the vulnerability lifecycle at enterprise scale. We map every engagement to a concrete threat or compliance requirement — no shelfware, no solutions looking for problems.",
+        ],
+        highlights: [
+          "Owner holds an active DoD Secret clearance",
+          "CompTIA CySA+, Security+, and SecurityAI+ certified",
+          "Aligned to NIST 800-53, NIST CSF, RMF, and DISA STIGs",
+          "SDVOSB — eligible for set-aside and sole-source awards",
+        ],
+      }}
+      capabilitiesLabel="Capabilities"
+      capabilitiesHeading="Full-spectrum security services"
+      capabilities={[
+        {
+          title: "Threat Detection & Hunting",
+          icon: Search,
+          columns: [
+            [
+              "SIEM detection engineering (Splunk ES)",
+              "Microsoft Sentinel content development",
+              "MITRE ATT&CK-mapped detection coverage",
+              "Detection tuning & false-positive reduction",
+            ],
+            [
+              "Proactive threat hunting",
+              "Cyber Kill Chain analysis",
+              "Threat intelligence enrichment (Recorded Future)",
+              "SOC playbook development & maturation",
+            ],
+            [
+              "24/7 monitoring support",
+              "Behavioral & anomaly detection",
+              "Adversary TTP identification",
+              "Detection-as-code pipelines",
+            ],
+          ],
+        },
+        {
+          title: "Incident Response & Forensics",
+          icon: Lock,
+          columns: [
+            [
+              "Incident response planning",
+              "Incident command for high-severity events",
+              "Containment & eradication",
+              "Endpoint response (Defender, CrowdStrike)",
+            ],
+            [
+              "Root cause analysis",
+              "Digital forensics support",
+              "ServiceNow ITSM response workflows",
+              "Mean-time-to-respond (MTTR) reduction",
+            ],
+            [
+              "Post-incident reporting",
+              "Tabletop exercises",
+              "Recovery & remediation validation",
+              "Executive & stakeholder briefings",
+            ],
+          ],
+        },
+        {
+          title: "Vulnerability Management",
+          icon: ShieldAlert,
+          columns: [
+            [
+              "Tenable.sc / Nessus deployment & tuning",
+              "Risk-based vulnerability prioritization",
+              "Authenticated & unauthenticated scanning",
+              "Remediation ownership & tracking",
+            ],
+            [
+              "NIST 800-53 & DISA STIG mapping",
+              "Patch management program support",
+              "Configuration & compliance scanning",
+              "Remediation validation via SIEM correlation",
+            ],
+            [
+              "Attack-surface reduction",
+              "Continuous monitoring (ConMon)",
+              "Vulnerability metrics & dashboards",
+              "Third-party & supply-chain risk review",
+            ],
+          ],
+        },
+        {
+          title: "Network & Cloud Security",
+          icon: Network,
+          columns: [
+            [
+              "Network security monitoring (NSM)",
+              "Endpoint detection & response (EDR)",
+              "Network detection & response (NDR)",
+              "On-prem & hybrid visibility",
+            ],
+            [
+              "Microsoft Azure & Azure AD security",
+              "AWS security posture review",
+              "Identity & access management (IAM)",
+              "Zero-trust architecture support",
+            ],
+            [
+              "Active Directory hardening",
+              "VPN & remote-access security",
+              "Cloud logging & telemetry pipelines",
+              "Segmentation & least-privilege design",
+            ],
+          ],
+        },
+        {
+          title: "Risk Management & Compliance",
+          icon: FileCheck,
+          columns: [
+            [
+              "Risk Management Framework (RMF)",
+              "Authority to Operate (ATO) support",
+              "System Security Plans (SSP)",
+              "POA&M development & tracking",
+            ],
+            [
+              "Security control assessments",
+              "NIST CSF gap assessments",
+              "FISMA & FedRAMP support",
+              "PCI-DSS & ISO 27001 readiness",
+            ],
+            [
+              "Continuous monitoring programs",
+              "Audit-ready documentation",
+              "Control-gap remediation planning",
+              "eMASS / Xacta support",
+            ],
+          ],
+        },
+        {
+          title: "Security Automation & Engineering",
+          icon: Cpu,
+          columns: [
+            [
+              "SOAR playbook development",
+              "Python security automation",
+              "PowerShell & Bash tooling",
+              "Detection-to-response automation",
+            ],
+            [
+              "Infrastructure-as-code (Terraform)",
+              "Compliance-evidence automation",
+              "API & data-pipeline integration",
+              "Splunk macro & app development",
+            ],
+            [
+              "Alert-triage automation",
+              "Custom security tooling",
+              "CI/CD security guardrails",
+              "Toil reduction & workflow optimization",
+            ],
+          ],
+        },
+      ]}
+      secondary={{
+        id: "engagement",
+        label: "How We Engage",
+        heading: "Flexible engagement, direct access to engineers",
+        body: [
+          "Whether you need a one-time assessment, project-based delivery, or ongoing SOC support, you work directly with the engineers doing the work — not a layer of account managers.",
+          "As an SDVOSB, we help prime contractors meet small business subcontracting goals while delivering the technical depth the mission requires.",
+        ],
+        highlights: [
+          "Federal subcontracting & teaming partnerships",
+          "SDVOSB set-aside & sole-source engagements",
+          "Fixed-scope projects with clear deliverables",
+          "Time & materials or firm-fixed-price",
+        ],
+      }}
+      downloads={{
+        heading: "Capabilities & documentation",
+        items: [
+          {
+            title: "Capability Statement",
+            desc: "One-page overview of core competencies, NAICS codes, and company data for contracting officers.",
+            href: "/contact",
+          },
+          {
+            title: "Request a Capability Briefing",
+            desc: "Schedule a walkthrough of our detection, response, and compliance capabilities.",
+            href: "/contact",
+          },
+          {
+            title: "Teaming & Subcontracting",
+            desc: "Discuss SDVOSB teaming arrangements and small business subcontracting support.",
+            href: "/contact",
+          },
+        ],
+      }}
+      ctaHeading="Ready to strengthen your security posture?"
+      ctaBody="Let's talk about your detection gaps, compliance deadlines, or subcontracting needs. You'll get a straight technical assessment and a written quote within one business day."
+    />
   );
 }

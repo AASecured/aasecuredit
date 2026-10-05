@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: "AA Secured IT Solutions <noreply@aasecuredit.com>",
       to: [email],
-      subject: "We received your message — AA Secured IT Solutions",
+      subject: "We received your message, AA Secured IT Solutions",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px;">
           <h2 style="color: #0B2748;">Thank you, ${name}.</h2>
